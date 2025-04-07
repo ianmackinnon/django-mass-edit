@@ -288,12 +288,12 @@ class MassAdmin(admin.ModelAdmin):
                                 formsets.append(formset)
 
                         if all_valid(formsets) and form_validated:
-                            # self.admin_obj.save_model(request, new_object, form, change=True)
-                            self.save_model(
-                                request,
-                                new_object,
-                                form,
-                                change=True)
+                            self.admin_obj.save_model(request, new_object, form, change=True)
+                            # self.save_model(
+                            #     request,
+                            #     new_object,
+                            #     form,
+                            #     change=True)
                             form.save_m2m()
                             for formset in formsets:
                                 self.save_formset(
